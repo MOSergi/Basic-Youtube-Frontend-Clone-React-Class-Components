@@ -6,14 +6,26 @@ import { Link } from "react-router-dom";
 //react icons
 import { FaBars, FaYoutube, FaSearch, FaMicrophone, FaTh, FaEllipsisV, FaUserAlt } from "react-icons/fa";
 
+//import dropdown
+import DropDownMenu from "./DropDownMenu";
+
 export default class Menu extends React.Component {
+
+
+    constructor(props){
+        super(props);
+        this.state = {
+            dropDown : false
+        }
+    }
 
     render(){
         return(
             <nav className="Menu">
                 <div className="firstSubMenu">
-                    <h3><FaBars /></h3>
-                    <h2><FaYoutube style={{color : "#FF0000"}}/>Youtube</h2>
+                    {this.state.dropDown ? <DropDownMenu /> : <></>}
+                    <h3 onClick={()=>{this.state.dropDown ? this.setState({dropDown : false}) : this.setState({dropDown : true})}}><FaBars /></h3>
+                    <h2><Link className="links" to='/'><FaYoutube style={{color : "#FF0000"}}/>Youtube</Link></h2>
                 </div>
                 <div className="buscador">
                     <input type="text" placeholder="Buscar"/>

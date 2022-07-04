@@ -1,0 +1,39 @@
+.dropdownMenu {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.dropdown {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    z-index: 500;
+    width: 200px;
+    margin: auto;
+    height: 100vh;
+    animation: aparecer 1s forwards;
+}
+
+.linksDrop {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+/*keyframes*/
+
+@keyframes aparecer {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: -15px;
+    }
+}
